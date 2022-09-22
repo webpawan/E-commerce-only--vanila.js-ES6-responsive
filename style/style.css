@@ -1,0 +1,121 @@
+:root {
+  --mainorange: #f76e11;
+  --orange-fade1: #ff9f45;
+  --orange-fade2: #ffbc80;
+  --orange-dark: #fc4f4f;
+  --white: #fff;
+  --black: #071013;
+}
+
+/* navbar------------------ */
+.navbar-toggler {
+  outline: none !important;
+  border: none;
+  font-size: 2.2rem;
+  color: var(--mainorange) !important;
+}
+
+.nav-link {
+  font-size: 1.5rem;
+  border-bottom: 0.1rem solid var(white);
+  color: black;
+}
+
+.nav-link:hover {
+  color: var(--orange-fade2);
+}
+
+.nav-active {
+  border-bottom: 0.1rem solid var(--white);
+}
+
+.navbar-bg {
+  background-color: var(--orange-dark);
+  color: var(--black);
+}
+
+.navbar-icon {
+  font-size: 1.5rem;
+}
+
+.navbar-cart-icon {
+  color: var(--black);
+  position: relative;
+}
+
+.navbar-cart-icon:hover {
+  color: var(--white);
+}
+
+.cart-items {
+  position: absolute;
+  top: -50%;
+  right: -30%;
+  font-size: 1.3rem;
+}
+
+/* banner --------------------------- */
+
+.banner {
+  background: url(/img/bg-1.webp) center/cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  min-height: 90vh;
+}
+
+.btn-orange {
+  background: var(--mainorange);
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  border-bottom: 2px solid var(--black);
+}
+
+.main-heading {
+  background-color: rgba(255, 255, 255, 0.444);
+}
+
+/* featured------------------ */
+.featured-container {
+  /* background-color: var(--orange-fade2); */
+  border: 2px solid orange;
+  position: relative;
+  overflow: hidden;
+}
+.featured-store-link {
+  color: var(--black);
+  text-decoration: none;
+  text-transform: uppercase;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  padding: 0.2rem 0.4rem;
+  transform: translateX(110%);
+  background-color: var(--mainorange);
+  transition: all 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+.featured-container:hover .featured-store-link {
+  transform: translateX(0);
+  color: var(--white);
+}
+
+.old-price {
+  text-decoration: line-through;
+}
+
+/* footer ------------ */
+footer {
+  background-color: var(--orange-dark);
+  color: white;
+}
+
+.footer-title {
+  background-color: var(--black);
+  padding: 1rem;
+  border-radius: 0.2rem;
+}
+
+.footer-icon {
+  background-color: black;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
