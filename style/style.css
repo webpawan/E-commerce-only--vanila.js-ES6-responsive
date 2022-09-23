@@ -12,7 +12,7 @@
   outline: none !important;
   border: none;
   font-size: 2.2rem;
-  color: var(--mainorange) !important;
+  color: var(--white) !important;
 }
 
 .nav-link {
@@ -29,7 +29,7 @@
   border-bottom: 0.1rem solid var(--white);
 }
 
-.navbar-bg {
+.navbar {
   background-color: var(--orange-dark);
   color: var(--black);
 }
@@ -57,10 +57,30 @@
 /* banner --------------------------- */
 
 .banner {
-  background: url(/img/bg-1.webp) center/cover;
+  /* background: url(/img/bg-1.webp) center/cover; */
   background-attachment: fixed;
   background-repeat: no-repeat;
   min-height: 90vh;
+  background-color: white;
+  position: relative;
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.bg-video-content {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.display {
+  z-index: 1000;
 }
 
 .btn-orange {

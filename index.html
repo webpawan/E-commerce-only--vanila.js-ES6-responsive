@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/style/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="/style/bootstrap.min.css" /> -->
     <link rel="stylesheet" href="/style/style.css" />
     <link
       rel="stylesheet"
@@ -13,6 +13,21 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+      integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+      crossorigin="anonymous"
+    ></script>
     <title>our E-commerce</title>
   </head>
   <body>
@@ -38,10 +53,12 @@
               <a href="/index.html" class="nav-link">Home</a>
             </li>
             <li class="nav-item mx-2">
-              <a href="" class="nav-link">Products</a>
+              <a href="/products.html" class="nav-link">Products</a>
             </li>
 
-            <li class="nav-item mx-2"><a href="" class="nav-link">Store</a></li>
+            <li class="nav-item mx-2">
+              <a href="/store.html" class="nav-link">Cart</a>
+            </li>
           </ul>
         </div>
         <div class="navbar-icons d-none d-lg-flex">
@@ -56,10 +73,15 @@
       </nva>
       <!-- nav end  -->
 
-      <div
-        class="banner d-flex align-items-center justify-content-center px-3 px-lg-5"
-      >
-        <div>
+      <div class="banner d-flex align-items-center justify-content-center">
+        <div class="bg-video">
+          <video autoplay loop muted width="100%" class="bg-video-content">
+            <source src="/video/video.webm" type="video/mp4" />
+            your browes is not supported
+          </video>
+        </div>
+
+        <div class="display">
           <h1 class="text-capitalize main-heading mb-0">
             Great people have great choise
           </h1>
@@ -87,7 +109,7 @@
         <div class="row">
           <div class="col-10 mx-auto col-md-6 mb-4 col-lg-4">
             <div class="featured-container p-5">
-              <img src="/img/img-1.jpg" class="img-fluid" alt="" />
+              <img src="/img/img-1.webp" class="img-fluid" alt="" />
               <a href="#" class="featured-store-link my-5">add to cart</a>
             </div>
             <h6 class="text-capitalize text-center my-2">special product</h6>
@@ -98,7 +120,7 @@
           </div>
           <div class="col-10 mx-auto col-md-6 mb-4 col-lg-4">
             <div class="featured-container p-5">
-              <img src="/img/img-2.jpg" class="img-fluid" alt="" />
+              <img src="/img/img-snk-w-1.webp" class="img-fluid" alt="" />
               <a href="#" class="featured-store-link my-5">add to cart</a>
             </div>
             <h6 class="text-capitalize text-center my-2">special product</h6>
@@ -109,7 +131,7 @@
           </div>
           <div class="col-10 mx-auto col-md-6 mb-4 col-lg-4">
             <div class="featured-container p-5">
-              <img src="/img/img-6.jpg" class="img-fluid" alt="" />
+              <img src="/img/img-3.webp" class="img-fluid" alt="" />
               <a href="#" class="featured-store-link my-5">add to cart</a>
             </div>
             <h6 class="text-capitalize text-center my-2">special product</h6>
@@ -120,7 +142,7 @@
           </div>
           <div class="col-10 mx-auto col-md-6 mb-4 col-lg-4">
             <div class="featured-container p-5">
-              <img src="/img/img-7.webp" class="img-fluid" alt="" />
+              <img src="/img/img-4.webp" class="img-fluid" alt="" />
               <a href="#" class="featured-store-link my-5">add to cart</a>
             </div>
             <h6 class="text-capitalize text-center my-2">special product</h6>
@@ -131,7 +153,7 @@
           </div>
           <div class="col-10 mx-auto col-md-6 mb-4 col-lg-4">
             <div class="featured-container p-5">
-              <img src="/img/img-8.webp" class="img-fluid" alt="" />
+              <img src="/img/img-1-foot-red-1.webp" class="img-fluid" alt="" />
               <a href="#" class="featured-store-link my-5">add to cart</a>
             </div>
             <h6 class="text-capitalize text-center my-2">special product</h6>
@@ -142,7 +164,7 @@
           </div>
           <div class="col-10 mx-auto col-md-6 mb-4 col-lg-4">
             <div class="featured-container p-5">
-              <img src="/img/img-9.jpeg " class="img-fluid" alt="" />
+              <img src="/img/img-2-foot-green.jpg " class="img-fluid" alt="" />
               <a href="#" class="featured-store-link my-5">add to cart</a>
             </div>
             <h6 class="text-capitalize text-center my-2">special product</h6>
@@ -215,6 +237,6 @@
     <!-- footer-end -->
 
     <script src="/js/index.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+    <!-- <script src="/js/bootstrap.min.js"></script> -->
   </body>
 </html>
