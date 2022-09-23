@@ -18,11 +18,11 @@
 .nav-link {
   font-size: 1.5rem;
   border-bottom: 0.1rem solid var(white);
-  color: black;
+  color: black !important;
 }
 
 .nav-link:hover {
-  color: var(--orange-fade2);
+  color: var(--orange-fade2) !important;
 }
 
 .nav-active {
@@ -60,7 +60,7 @@
   /* background: url(/img/bg-1.webp) center/cover; */
   background-attachment: fixed;
   background-repeat: no-repeat;
-  min-height: 90vh;
+  min-height: 100vh;
   background-color: white;
   position: relative;
 }
@@ -138,4 +138,61 @@ footer {
   background-color: black;
   padding: 0.5rem;
   border-radius: 0.5rem;
+}
+
+/* product ---------------*/
+
+.product {
+  margin-top: 6rem;
+}
+
+.product-categories-underline {
+  height: 0.2rem;
+  width: 5rem;
+  background-color: var(--mainorange);
+}
+
+.products-categories-link {
+  color: var(--black);
+  text-decoration: none;
+}
+
+.products-categories-link:hover {
+  color: var(--mainorange);
+}
+
+.products-color {
+  width: 1rem;
+  height: 1rem;
+}
+
+.product-color-red {
+  background-color: red;
+}
+
+.product-color-black {
+  background-color: black;
+}
+
+.product-color-green {
+  background-color: green;
+}
+
+.product-color-yellow {
+  background-color: orange;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--mainorange);
+}
+
+.link:hover {
+  color: var(--orange-fade2);
+}
+
+/* store --------------- */
+
+.totals {
+  margin-top: 5%;
 }
