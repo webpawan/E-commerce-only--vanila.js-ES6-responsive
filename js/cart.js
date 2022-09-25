@@ -1,5 +1,6 @@
 let bucketcount = document.getElementById("cart-item");
 let bucket = JSON.parse(localStorage.getItem('data')) || [];
+let checkout = document.getElementById('checkout');
 
 let show = document.getElementById('showdata');
 const data = [
@@ -43,18 +44,20 @@ calculationcart();
 const genratedata = () => {
     
     if (bucket.length != 0) {
-        return (showdata.innerHTML = bucket.map((x) => {
+        return (show.innerHTML = bucket.map((x) => {
             let search = data.find((item) => item.id == x.itemid) || [];
             let { id, name, price, img } = search;
           
         return `
         <div class="row my-3 align-items-center">
-        <div class="col-10 mx-auto col-md-2">
+        <div class="col-10 mx-auto col-md-2 cart-img">
           <img
             src="${img}"
             class="img-fluid"
             alt=""
           />
+          <button class="btn btn-outline-danger cart-btn" onclick="remove(${x.itemid})">
+          <i class="fa-solid fa-xmark"></i></button>
         </div>
         <div class="col-10 mx-auto col-md-2">
           <p id="product-name">${name}</p>
@@ -83,20 +86,17 @@ const genratedata = () => {
       </div>
 
         `
-
-
+        
 }).join(""))
-
-
-
     } else {
-            console.log("empty");
+            
+      show.innerHTML = `<h1>CART IS EMPTY NOW</h1>`;
+      checkout.style.display = "none";
         
 }
 
 }
 
-genratedata();
 
 
 
@@ -114,6 +114,8 @@ function increment(id) {
         search.itmecount += 1;   
 }
     update(item);
+genratedata();
+
     localStorage.setItem('data', JSON.stringify(bucket));
 
 }
@@ -123,14 +125,18 @@ function decerement(id) {
     let item = id;
     let search = bucket.find((x) => x.itemid == item);
 
-    
+
     if (search == undefined) return;
     else if (search.itmecount == 0) { 
         return;
     } else {
         search.itmecount -= 1;   
-}
-update(item);
+    }
+    
+    update(item);
+    bucket = bucket.filter((x) => x.itmecount != 0);
+genratedata();
+    
 localStorage.setItem('data', JSON.stringify(bucket));
 
 }
@@ -142,4 +148,17 @@ function update(id) {
     // console.log(item);
     document.getElementById(id).innerText = search.itmecount;
     calculationcart();
+    
 }
+
+function remove(id) {
+  bucket = bucket.filter((x) => x.itemid != id);
+  genratedata();
+  calculationcart();
+
+  localStorage.setItem('data', JSON.stringify(bucket));
+  console.log('remove');
+}
+
+
+genratedata();

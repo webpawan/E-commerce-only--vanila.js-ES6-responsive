@@ -196,3 +196,18 @@ footer {
 .totals {
   margin-top: 5%;
 }
+
+.cart-img {
+  position: relative;
+}
+.cart-btn {
+  display: none;
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  transform: translate(-50%, -50%);
+}
+
+.display {
+  display: none;
+}
