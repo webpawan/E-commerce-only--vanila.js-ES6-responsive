@@ -1,63 +1,25 @@
 let bucketcount = document.getElementById("cart-item");
 let bucket = JSON.parse(localStorage.getItem('data')) || [];
 let checkout = document.getElementById('checkout');
-
 let show = document.getElementById('showdata');
-const data = [
-    {
-        id: 1,
-        name: 'shoes1',
-        price: '120',
-        img: '/img/img-1.webp'
-    },
-    
-    {
-        id: 2,
-        name: 'shoes1',
-        price: '120',
-        img: '/img/img-2.webp'
-    },
-    
-    {
-        id: 3,
-        name: 'shoes1',
-        price: '120',
-        img: 'img/img-3.webp'
-    },
-    
-    {
-        id: 4,
-        name: 'shoes1',
-        price: '120',
-    img: 'img/img-4.webp'
-  },
-  {
-    id: 5,
-    name: 'shoes1',
-    price: '120',
-    img: 'img/img-5.jpg'
-},
-{
-    id: 6,
-    name: 'shoes1',
-    price: '120',
-img:'img/img-6.webp'},
-
-
-]
 const calculationcart = () => {
     let count = bucket.map((x) => x.itmecount).reduce((x, y) => x + y, 0)
     bucketcount.innerText = count
 }
 calculationcart();
 
-
-
-const genratedata = () => {
+async function api() {
+  
+try {
+  
+  let raw =await fetch('js/data.json');
+  let actdata = await raw.json();
+  
+  const genratedata = () => {
     
     if (bucket.length != 0) {
         return (show.innerHTML = bucket.map((x) => {
-            let search = data.find((item) => item.id == x.itemid) || [];
+            let search = actdata.find((item) => item.id == x.itemid) || [];
             let { id, name, price, img } = search;
           
         return `
@@ -108,7 +70,15 @@ const genratedata = () => {
 }
 
 }
+  return genratedata();
 
+} catch (error) {
+  alert(`something is wrong from servir or json file ${error}`)
+}
+
+
+}
+api();
 function increment(id) {
     let item = id;
     let search = bucket.find((x) => x.itemid == item);
@@ -122,12 +92,11 @@ function increment(id) {
         search.itmecount += 1;   
 }
     update(item);
-genratedata();
+api();
 
     localStorage.setItem('data', JSON.stringify(bucket));
 
 }
-
 function decerement(id) {
     
     let item = id;
@@ -143,12 +112,11 @@ function decerement(id) {
     
     update(item);
     bucket = bucket.filter((x) => x.itmecount != 0);
-genratedata();
+api();
     
 localStorage.setItem('data', JSON.stringify(bucket));
 
 }
-
 function update(id) {
     let item = id;
     let search = bucket.find((x) => x.itemid == item);
@@ -157,15 +125,12 @@ function update(id) {
     calculationcart();
     
 }
-
 function remove(id) {
   bucket = bucket.filter((x) => x.itemid != id);
-  genratedata();
+  api();
   calculationcart();
 
   localStorage.setItem('data', JSON.stringify(bucket));
   console.log('remove');
 }
-
-
-genratedata();
+api();

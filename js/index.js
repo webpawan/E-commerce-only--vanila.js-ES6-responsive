@@ -49,7 +49,7 @@ async function mydata() {
   try {
     let data = await fetch('js/data.json');
     let mydata = await data.json();
-    let apidata = mydata.slice(0, 5);   
+    let apidata = mydata;   
     
 let genratedata = () => {
   return (shop.innerHTML = apidata.map((x) => {
