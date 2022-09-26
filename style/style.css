@@ -81,6 +81,13 @@
 
 .display {
   z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.display button {
+  font-size: 1.3rem;
 }
 
 .btn-orange {
@@ -206,8 +213,4 @@ footer {
   top: 10%;
   right: 5%;
   transform: translate(-50%, -50%);
-}
-
-.display {
-  display: none;
 }

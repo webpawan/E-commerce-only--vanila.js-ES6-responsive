@@ -29,7 +29,19 @@ const data = [
         id: 4,
         name: 'shoes1',
         price: '120',
-    img:'img/img-4.webp'}
+    img: 'img/img-4.webp'
+  },
+  {
+    id: 5,
+    name: 'shoes1',
+    price: '120',
+    img: 'img/img-5.jpg'
+},
+{
+    id: 6,
+    name: 'shoes1',
+    price: '120',
+img:'img/img-6.webp'},
 
 
 ]
@@ -97,10 +109,6 @@ const genratedata = () => {
 
 }
 
-
-
-
-
 function increment(id) {
     let item = id;
     let search = bucket.find((x) => x.itemid == item);
@@ -140,7 +148,6 @@ genratedata();
 localStorage.setItem('data', JSON.stringify(bucket));
 
 }
-
 
 function update(id) {
     let item = id;

@@ -1,0 +1,38 @@
+[
+    {
+      "id": 1,
+      "name": "shoes1",
+      "price": "120",
+      "img": "/img/img-1.webp"
+    },
+    {
+      "id": 2,
+      "name": "shoes1",
+      "price": "120",
+      "img": "/img/img-2.webp"
+    },
+    {
+      "id": 3,
+      "name": "shoes1",
+      "price": "120",
+      "img": "img/img-3.webp"
+    },
+    {
+      "id": 4,
+      "name": "shoes1",
+      "price": "120",
+      "img": "img/img-4.webp"
+    },
+    {
+      "id": 5,
+      "name": "shoes1",
+      "price": "120",
+      "img": "img/img-5.jpg"
+    },
+    {
+      "id": 6,
+      "name": "shoes1",
+      "price": "120",
+      "img": "img/img-6.webp"
+    }
+  ]
