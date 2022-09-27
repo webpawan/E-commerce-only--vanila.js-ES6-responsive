@@ -4,94 +4,108 @@
       "cat":"sneakers",
       "name": "white color",
       "price": "120",
-      "img": "/img/img-8.webp"
+      "img": "/img/img-8.webp",
+      "color":"white"
     },
     {
       "id": 2,
       "cat":"ball",
       "name": "green color ",
       "price": "120",
-      "img": "/img/img-9.jpg"
+      "img": "/img/img-9.jpg",
+      "color":"green"
     },{
       "id": 13,
       "cat":"sneakers",
       "name": "shoes1",
       "price": "120",
-      "img": "img/img-14.webp"
+      "img": "img/img-14.webp",
+      "color":"blue"
     },
     {
       "id": 3,
       "cat":"spo",
       "name": "shoes1",
       "price": "120",
-      "img": "img/img-3.webp"
+      "img": "img/img-3.webp",
+      "color":"black"
     },
     {
       "id": 4,
       "cat":"spo",
       "name": "shoes1",
       "price": "120",
-      "img": "img/img-4.webp"
+      "img": "img/img-4.webp",
+      "color":"green"
     },
     {
       "id": 5,
       "cat":"spo",
       "name": "shoes1",
       "price": "120",
-      "img": "img/img-5.webp"
+      "img": "img/img-5.webp",
+      "color":"white"
     },
     {
       "id": 6,
       "cat":"ball",
       "name": "shoes1",
       "price": "120",
-      "img": "img/img-6.webp"
+      "img": "img/img-6.webp",
+      "color":"black"
     },{
       "id": 7,
       "cat":"ball",
       "name": "shoes1",
       "price": "120",
-      "img": "img/img-7.webp"
+      "img": "img/img-7.webp",
+      "color":"blue"
     },{
       "id": 15,
       "cat":"sneakers",
       "name": "shoes1",
       "price": "120",
-      "img": "img/img-1.webp"
+      "img": "img/img-1.webp",
+      "color":"black"
     },{
       "id": 8,
       "cat":"sneakers",
       "name": "shoes1",
       "price": "120",
-      "img": "img/img-2.webp"
+      "img": "img/img-2.webp",
+      "color":"black"
     },
     {
       "id": 9,
       "cat":"ball",
       "name": "shoes1",
       "price": "120",
-      "img": "/img/img-10.webp"
+      "img": "/img/img-10.webp",
+      "color":"orange"
     },
     {
       "id": 10,
       "cat":"ball",
       "name": "shoes1",
       "price": "120",
-      "img": "/img/img-11.webp"
+      "img": "/img/img-11.webp",
+      "color":"orange"
     },
     {
       "id": 11,
       "cat":"ball",
       "name": "shoes1",
       "price": "120",
-      "img": "img/img-12.webp"
+      "img": "img/img-12.webp",
+      "color":"orange"
     },
     {
       "id": 12,
       "cat":"ball",
       "name": "shoes1",
       "price": "120",
-      "img": "img/img-13.jpg"
+      "img": "img/img-13.jpg",
+      "color":"orange"
     },
     
     {
@@ -99,7 +113,8 @@
       "cat":"sneakers",
       "name": "shoes1",
       "price": "120",
-      "img": "img/img-15.webp"
+      "img": "img/img-15.webp",
+      "color":"white"
     }
 
   ]

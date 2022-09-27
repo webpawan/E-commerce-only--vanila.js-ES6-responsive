@@ -7,6 +7,12 @@
   --black: #071013;
 }
 
+* {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 /* navbar------------------ */
 .navbar-toggler {
   outline: none !important;
@@ -171,10 +177,11 @@ footer {
 .products-color {
   width: 1rem;
   height: 1rem;
+  box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.138);
 }
 
 .product-color-red {
-  background-color: red;
+  background-color: rgb(237, 237, 237);
 }
 
 .product-color-black {
@@ -186,7 +193,11 @@ footer {
 }
 
 .product-color-yellow {
-  background-color: orange;
+  background-color: blue;
+}
+
+.product-color-orange {
+  background-color: var(--mainorange);
 }
 
 .link {
@@ -213,4 +224,17 @@ footer {
   top: 10%;
   right: 5%;
   transform: translate(-50%, -50%);
+}
+
+.active {
+  background-color: black;
+}
+
+.colors-cat {
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.colors-cat:hover {
+  color: var(--orange-dark);
 }

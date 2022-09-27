@@ -57,207 +57,101 @@ async function mydata() {
     let data = await fetch('js/data.json');
     let mydata = await data.json();
     let apidata = mydata;
-    genratedata(apidata);
+    filtercat(apidata);
+    filterbycolor(apidata)
   } catch (error) {
-    console.log("data not fatch");
+   alert('maybe data not fatch please refresh the page')
   }
 }
 mydata();
-let genratedata = (apidata) => {
+let filtercat = (apidata) => {
 
   let showoutput = document.getElementsByClassName('products-categories-link');
  
  
   for (let i = 0; i < showoutput.length; i++){
-  
     showoutput[i].addEventListener('click', () => {
       let val = showoutput[i].innerText;
-      
-      if (val == "Football") {
-       
-        let mydata = apidata.filter((ele) => ele.cat == 'ball');
-        return (shop.innerHTML = mydata.map((x) => {
-          let { id, name, price, img } = x;
-          let search = bucket.find((x) => x.itemid == id);
-          return `
-        <div class="mx-auto col-md-6 mb-4 col-lg-4 ">
-        <div class="featured-container p-5">
-          <img
-            src="${img}"
-          class="img-fluid"
-            alt=""
-          />
-          <div class="featured-store-link my-5"
-          ><div
-             class="d-flex justify-content-center align-items-center"
-          >
-            <span
-              class="btn btn-outline-dark mx-1"
-              onclick="decerement(${id})"
-              ><i class="fa-solid fa-minus"></i
-            ></span>
-             <span class="btn btn-outline-dark mx-1" id="${id}">${search == undefined ? 0 : search.itmecount}</span>
-            <span
-              class="btn btn-outline-dark mx-1"
-             onclick="increment(${id})"
-              ><i class="fa-solid fa-plus"></i
-            ></span>
-          </div>
-          </div>
-         </div>
-         <h6 class="text-capitalize text-center my-2">${name}</h6>
-         <h6 class="text-center">
-           <span class="">${price}</span>
-         </h6>
-      
-         
-       </div>
-       
-        `
-      
-        }).join(""))
-      
+      let valele = showoutput[i];
 
+      if (val == "Football") {
+        let mydata = apidata.filter((ele) => ele.cat == 'ball');
+        showwindowdata(mydata);
+        filterbycolor(mydata);
+        
       } else if (val == "Sport") {
+        
         let mydata = apidata.filter((ele) => ele.cat == 'spo');
-        return (shop.innerHTML = mydata.map((x) => {
-          let { id, name, price, img } = x;
-          let search = bucket.find((x) => x.itemid == id);
-          return `
-        <div class="mx-auto col-md-6 mb-4 col-lg-4 ">
-        <div class="featured-container p-5">
-          <img
-            src="${img}"
-          class="img-fluid"
-            alt=""
-          />
-          <div class="featured-store-link my-5"
-          ><div
-             class="d-flex justify-content-center align-items-center"
-          >
-            <span
-              class="btn btn-outline-dark mx-1"
-              onclick="decerement(${id})"
-              ><i class="fa-solid fa-minus"></i
-            ></span>
-             <span class="btn btn-outline-dark mx-1" id="${id}">${search == undefined ? 0 : search.itmecount}</span>
-            <span
-              class="btn btn-outline-dark mx-1"
-             onclick="increment(${id})"
-              ><i class="fa-solid fa-plus"></i
-            ></span>
-          </div>
-          </div>
-         </div>
-         <h6 class="text-capitalize text-center my-2">${name}</h6>
-         <h6 class="text-center">
-           <span class="">${price}</span>
-         </h6>
-      
-         
-       </div>
-       
-        `
-      
-        }).join(""))
-      
+        showwindowdata(mydata);
+        filterbycolor(mydata);
 
       } else if (val == 'Sneaker') {
         let mydata = apidata.filter((ele) => ele.cat == 'sneakers');
-        return (shop.innerHTML = mydata.map((x) => {
-          let { id, name, price, img } = x;
-          let search = bucket.find((x) => x.itemid == id);
-          return `
-        <div class="mx-auto col-md-6 mb-4 col-lg-4 ">
-        <div class="featured-container p-5">
-          <img
-            src="${img}"
-          class="img-fluid"
-            alt=""
-          />
-          <div class="featured-store-link my-5"
-          ><div
-             class="d-flex justify-content-center align-items-center"
-          >
-            <span
-              class="btn btn-outline-dark mx-1"
-              onclick="decerement(${id})"
-              ><i class="fa-solid fa-minus"></i
-            ></span>
-             <span class="btn btn-outline-dark mx-1" id="${id}">${search == undefined ? 0 : search.itmecount}</span>
-            <span
-              class="btn btn-outline-dark mx-1"
-             onclick="increment(${id})"
-              ><i class="fa-solid fa-plus"></i
-            ></span>
-          </div>
-          </div>
-         </div>
-         <h6 class="text-capitalize text-center my-2">${name}</h6>
-         <h6 class="text-center">
-           <span class="">${price}</span>
-         </h6>
-      
-         
-       </div>
-       
-        `
-      
-        }).join(""))
-      
+        showwindowdata(mydata);
+        filterbycolor(mydata);
+
       } else {
-        return (shop.innerHTML = apidata.map((x) => {
-          let { id, name, price, img } = x;
-         let search =bucket.find((x)=>x.itemid == id);
-        return `
-        <div class="mx-auto col-md-6 mb-4 col-lg-4 ">
-        <div class="featured-container p-5">
-          <img
-            src="${img}"
-          class="img-fluid"
-            alt=""
-          />
-          <div class="featured-store-link my-5"
-          ><div
-             class="d-flex justify-content-center align-items-center"
-          >
-            <span
-              class="btn btn-outline-dark mx-1"
-              onclick="decerement(${id})"
-              ><i class="fa-solid fa-minus"></i
-            ></span>
-             <span class="btn btn-outline-dark mx-1" id="${id}">${search == undefined ? 0 : search.itmecount}</span>
-            <span
-              class="btn btn-outline-dark mx-1"
-             onclick="increment(${id})"
-              ><i class="fa-solid fa-plus"></i
-            ></span>
-          </div>
-          </div>
-         </div>
-         <h6 class="text-capitalize text-center my-2">${name}</h6>
-         <h6 class="text-center">
-           <span class="">${price}</span>
-         </h6>
-      
-         
-       </div>
-       
-        `
-      
-      }).join(""))
+        showwindowdata(apidata);
+        filterbycolor(apidata);
+
       }
     })
+  }
+  showwindowdata(apidata);
+}
 
+
+
+ 
+const filterbycolor = (mydata) => {
+  let color = document.getElementsByClassName('colors-cat');
+for (let i = 0; i < color.length; i++){
+  color[i].addEventListener('click', () => {
+    let val = color[i].innerText.trim();
+    if (val == 'White') {
+      let newmydata = mydata.filter((ele) => ele.color == 'white');
+      showwindowdata(newmydata);
+      
+    } else if (val == 'Black') {
+      let newmydata = mydata.filter((ele) => ele.color == 'black');
+      showwindowdata(newmydata);
+      
+
+    } else if (val == 'Blue') {
+     let  newmydata = mydata.filter((ele) => ele.color == 'blue');
+      showwindowdata(newmydata);
+      
+
+    } else  if (val == 'Green'){
+      let newmydata = mydata.filter((ele) => ele.color == 'green');
+      showwindowdata(newmydata);
+      
+
+    }else  if (val == 'Orange'){
+      let newmydata = mydata.filter((ele) => ele.color == 'orange');
+      showwindowdata(newmydata);
+      
+
+    } else {
+      showwindowdata(mydata);
+    }
+})
 
   }
+  
+}
 
 
 
-  return (shop.innerHTML = apidata.map((x) => {
+
+
+
+const showwindowdata = (mydata) => {
+  
+  return (shop.innerHTML = mydata.map((x) => {
     let { id, name, price, img } = x;
-   let search =bucket.find((x)=>x.itemid == id);
-  return `
+    let search = bucket.find((x) => x.itemid == id);
+    return `
   <div class="mx-auto col-md-6 mb-4 col-lg-4 ">
   <div class="featured-container p-5">
     <img
@@ -293,7 +187,8 @@ let genratedata = (apidata) => {
  
   `
 
-}).join(""))
+  }).join(""))
 
-
+  
 }
+calculationcart();
