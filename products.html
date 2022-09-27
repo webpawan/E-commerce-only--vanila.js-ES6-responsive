@@ -78,10 +78,16 @@
               <div class="product-categories-underline"></div>
             </div>
             <a href="#" class="d-block products-categories-link">
-              <p class="mb-0">1. sport shoes</p>
+              <p class="mb-0" id="all" >All</p>
             </a>
             <a href="#" class="d-block products-categories-link">
-              <p class="mb-0">2. sneaker shoes</p>
+              <p class="mb-0" id="all">Sneaker</p>
+            </a>
+            <a href="#" class="d-block products-categories-link">
+              <p class="mb-0">Sport</p>
+            </a>
+            <a href="#" class="d-block products-categories-link">
+              <p class="mb-0">Football</p>
             </a>
 
             <!-- categories end  -->
@@ -111,6 +117,8 @@
                   type="text"
                   placeholder="search by name"
                   class="form-control text-capitalize"
+                  id="myinput"
+                  onkeyup="search()"
                 />
               </div>
             </form>

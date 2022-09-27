@@ -1,81 +1,94 @@
 [
     {
       "id": 1,
-      "name": "shoes1",
+      "cat":"sneakers",
+      "name": "white color",
       "price": "120",
       "img": "/img/img-8.webp"
-
     },
     {
       "id": 2,
-      "name": "shoes1",
+      "cat":"ball",
+      "name": "green color ",
       "price": "120",
       "img": "/img/img-9.jpg"
     },{
       "id": 13,
+      "cat":"sneakers",
       "name": "shoes1",
       "price": "120",
       "img": "img/img-14.webp"
     },
     {
       "id": 3,
+      "cat":"spo",
       "name": "shoes1",
       "price": "120",
       "img": "img/img-3.webp"
     },
     {
       "id": 4,
+      "cat":"spo",
       "name": "shoes1",
       "price": "120",
       "img": "img/img-4.webp"
     },
     {
       "id": 5,
+      "cat":"spo",
       "name": "shoes1",
       "price": "120",
       "img": "img/img-5.webp"
     },
     {
       "id": 6,
+      "cat":"ball",
       "name": "shoes1",
       "price": "120",
       "img": "img/img-6.webp"
     },{
       "id": 7,
+      "cat":"ball",
       "name": "shoes1",
       "price": "120",
       "img": "img/img-7.webp"
     },{
       "id": 15,
+      "cat":"sneakers",
       "name": "shoes1",
       "price": "120",
       "img": "img/img-1.webp"
     },{
       "id": 8,
+      "cat":"sneakers",
       "name": "shoes1",
       "price": "120",
-      "img": "img/img-1.webp"
+      "img": "img/img-2.webp"
     },
     {
       "id": 9,
+      "cat":"ball",
       "name": "shoes1",
       "price": "120",
       "img": "/img/img-10.webp"
     },
     {
       "id": 10,
+      "cat":"ball",
       "name": "shoes1",
       "price": "120",
       "img": "/img/img-11.webp"
     },
     {
       "id": 11,
+      "cat":"ball",
       "name": "shoes1",
       "price": "120",
       "img": "img/img-12.webp"
     },
     {
       "id": 12,
+      "cat":"ball",
       "name": "shoes1",
       "price": "120",
       "img": "img/img-13.jpg"
@@ -83,6 +96,7 @@
     
     {
       "id": 14,
+      "cat":"sneakers",
       "name": "shoes1",
       "price": "120",
       "img": "img/img-15.webp"
