@@ -2,6 +2,8 @@
 let shop = document.getElementById('showdata');
 let bucketcount = document.getElementById("cart-item");
 let bucket = JSON.parse(localStorage.getItem('data')) || [];
+let input = document.getElementById('search-input');
+
 const calculationcart = () => {
   let count = bucket.map((x) => x.itmecount).reduce((x, y) => x + y, 0)
   bucketcount.innerText = count
@@ -48,103 +50,170 @@ localStorage.setItem('data', JSON.stringify(bucket));
 
 
 
-
-
-
-
 async function mydata() {
   try {
     let data = await fetch('js/data.json');
     let mydata = await data.json();
     let apidata = mydata;
     filtercat(apidata);
-    filterbycolor(apidata)
   } catch (error) {
    alert('maybe data not fatch please refresh the page')
   }
 }
 mydata();
-let filtercat = (apidata) => {
 
+// filter by categories
+let filtercat = (apidata) => {
   let showoutput = document.getElementsByClassName('products-categories-link');
- 
- 
   for (let i = 0; i < showoutput.length; i++){
     showoutput[i].addEventListener('click', () => {
       let val = showoutput[i].innerText;
-      let valele = showoutput[i];
+      
 
       if (val == "Football") {
         let mydata = apidata.filter((ele) => ele.cat == 'ball');
+        console.log(mydata);
         showwindowdata(mydata);
         filterbycolor(mydata);
+        filterbyprice(mydata);
+        searchfilter(mydata)
         
       } else if (val == "Sport") {
         
         let mydata = apidata.filter((ele) => ele.cat == 'spo');
         showwindowdata(mydata);
         filterbycolor(mydata);
+  filterbyprice(mydata);
+  searchfilter(mydata)
+        
 
       } else if (val == 'Sneaker') {
         let mydata = apidata.filter((ele) => ele.cat == 'sneakers');
         showwindowdata(mydata);
         filterbycolor(mydata);
+  filterbyprice(mydata);
+        searchfilter(mydata);
+        
 
       } else {
         showwindowdata(apidata);
         filterbycolor(apidata);
+   
 
       }
     })
   }
   showwindowdata(apidata);
+  filterbycolor(apidata);
+  filterbyprice(apidata);
+searchfilter(apidata);
+
 }
-
-
-
- 
+//  filter by color 
 const filterbycolor = (mydata) => {
-  let color = document.getElementsByClassName('colors-cat');
-for (let i = 0; i < color.length; i++){
-  color[i].addEventListener('click', () => {
-    let val = color[i].innerText.trim();
-    if (val == 'White') {
-      let newmydata = mydata.filter((ele) => ele.color == 'white');
-      showwindowdata(newmydata);
-      
-    } else if (val == 'Black') {
-      let newmydata = mydata.filter((ele) => ele.color == 'black');
-      showwindowdata(newmydata);
-      
+  
+  
+    let color = document.getElementsByClassName('colors-cat');
+    for (let i = 0; i < color.length; i++){
+      color[i].addEventListener('click', () => {
+        let val = color[i].innerText.trim();
+        if (val == 'White') {
+          let newmydata = mydata.filter((ele) => ele.color == 'white');
+          showwindowdata(newmydata);
+          filterbyprice(newmydata);
+        searchfilter(newmydata);
+          
+        } else if (val == 'Black') {
+          let newmydata = mydata.filter((ele) => ele.color == 'black');
+          showwindowdata(newmydata);
+          filterbyprice(newmydata);
+        searchfilter(newmydata);
+          
+    
+        } else if (val == 'Blue') {
+         let  newmydata = mydata.filter((ele) => ele.color == 'blue');
+          showwindowdata(newmydata);
+          filterbyprice(newmydata);
+        searchfilter(newmydata);
+          
+    
+        } else  if (val == 'Green'){
+          let newmydata = mydata.filter((ele) => ele.color == 'green');
+          showwindowdata(newmydata);
+          filterbyprice(newmydata);
+        searchfilter(newmydata);
+          
+    
+        }else  if (val == 'Orange'){
+          let newmydata = mydata.filter((ele) => ele.color == 'orange');
+          showwindowdata(newmydata);
+          filterbyprice(newmydata);
+        searchfilter(newmydata);
+          
+    
+        } else {
+          showwindowdata(mydata);
+        }
+    })
+    
+      }
 
-    } else if (val == 'Blue') {
-     let  newmydata = mydata.filter((ele) => ele.color == 'blue');
-      showwindowdata(newmydata);
-      
+      // filterbyprice(mydata);
+      // searchfilter(mydata);
 
-    } else  if (val == 'Green'){
-      let newmydata = mydata.filter((ele) => ele.color == 'green');
-      showwindowdata(newmydata);
-      
-
-    }else  if (val == 'Orange'){
-      let newmydata = mydata.filter((ele) => ele.color == 'orange');
-      showwindowdata(newmydata);
-      
-
-    } else {
-      showwindowdata(mydata);
-    }
-})
-
-  }
   
 }
+// filter by price 
+const filterbyprice = (mydata) => {
+  
+  let rangefilter = document.getElementById('price-range');
+  let showval = document.getElementById('range');
+  
+  // let maxprice = mydata.map((ele) => ele.price);
+  // i put all array value in Math.max function 
+  let maxprice = 0;
+  let minprice =Number. MAX_VALUE;
+
+  for (let i = 0; i < mydata.length; i++){
+    maxprice = Math.max(mydata[i].price, maxprice);
+    minprice = Math.min(mydata[i].price, minprice);
+ 
+  }
+
+  rangefilter.min = minprice;
+  rangefilter.max = maxprice;
+  rangefilter.value = maxprice;
+  showval.innerText = `range: ${maxprice}`
+  
+
+  rangefilter.addEventListener('input', () => {
+   let val = parseInt(rangefilter.value);
+    showval.textContent = `range : ${val}`;
+    let newmydata = mydata.filter((product) => product.price <= val);
+    showwindowdata(newmydata);
+    searchfilter(newmydata);
+
+  })
 
 
+}
+// filter by search 
+const searchfilter = (apidata) => {
+  
+  input.addEventListener('input', (e) => {
+    e.preventDefault()
+    let val = input.value.toUpperCase();
+    let newdata = [];
+    for (let i = 0; i < apidata.length; i++) {
+      if (apidata[i].name.toUpperCase().includes(val)) {
+        newdata.push(apidata[i]);
+    }
+    
+   }
+showwindowdata(newdata)
+  })
 
-
-
+}
 
 const showwindowdata = (mydata) => {
   
@@ -192,3 +261,5 @@ const showwindowdata = (mydata) => {
   
 }
 calculationcart();
+
+

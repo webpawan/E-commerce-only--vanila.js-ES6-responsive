@@ -97,28 +97,32 @@
             </div>
             <form>
               <div class="form-group">
-                <label for="price-range text-capitalize">
-                  range : 0 - 5000</label
+                <label for="range text-capitalize" id="range">
+                  range : 50</label
                 >
                 <input
                   type="range"
                   id="price-range"
                   name="price-range"
                   class="form-control-range"
+                  value=""
+                  min=""
+                  max=""
+                 
+                  
                 />
+                
               </div>
+
+
+
               <div class="input-group my-2">
-                <div class="input-group-prepend">
-                  <span class="input-group-text form-icon">
-                    <i class="fa fa-search py-2"></i>
-                  </span>
-                </div>
                 <input
                   type="text"
                   placeholder="search by name"
                   class="form-control text-capitalize"
-                  id="myinput"
-                  onkeyup="search()"
+        id="search-input"
+                 
                 />
               </div>
             </form>
