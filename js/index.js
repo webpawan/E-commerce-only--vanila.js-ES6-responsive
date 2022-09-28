@@ -72,7 +72,7 @@ let filtercat = (apidata) => {
 
       if (val == "Football") {
         let mydata = apidata.filter((ele) => ele.cat == 'ball');
-        console.log(mydata);
+        // console.log(mydata);
         showwindowdata(mydata);
         filterbycolor(mydata);
         filterbyprice(mydata);
@@ -246,9 +246,9 @@ const showwindowdata = (mydata) => {
     </div>
     </div>
    </div>
-   <h6 class="text-capitalize text-center my-2">${name}</h6>
+   <h6 class="text-capitalize text-center my-2">name : ${name}</h6>
    <h6 class="text-center">
-     <span class="">${price}</span>
+     <span class="">price: ${price}</span>
    </h6>
 
    

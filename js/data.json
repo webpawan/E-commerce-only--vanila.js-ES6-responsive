@@ -3,9 +3,9 @@
       "id": 1,
       "cat":"sneakers",
       "name": "white",
-      "price": "1000.00",
+      "price": "1000",
       "img": "/img/img-8.webp",
-      "color":"white"
+      "color":"white sneakers premium"
     },
     {
       "id": 2,
@@ -13,11 +13,11 @@
       "name": "green",
       "price": "800",
       "img": "/img/img-9.jpg",
-      "color":"green"
+      "color":"green footbal shoes"
     },{
       "id": 13,
       "cat":"sneakers",
-      "name": "white",
+      "name": "blue sneakers cool",
       "price": "750",
       "img": "img/img-14.webp",
       "color":"blue"
@@ -25,7 +25,7 @@
     {
       "id": 3,
       "cat":"spo",
-      "name": "shoes1",
+      "name": "black cheap sport shoes",
       "price": "600",
       "img": "img/img-3.webp",
       "color":"black"
@@ -33,7 +33,7 @@
     {
       "id": 4,
       "cat":"spo",
-      "name": "shoes1",
+      "name": "green cheap sport shoes",
       "price": "650",
       "img": "img/img-4.webp",
       "color":"green"
@@ -41,7 +41,7 @@
     {
       "id": 5,
       "cat":"spo",
-      "name": "shoes1",
+      "name": "white sport cheap shoes",
       "price": "650",
       "img": "img/img-5.webp",
       "color":"white"
@@ -49,28 +49,28 @@
     {
       "id": 6,
       "cat":"ball",
-      "name": "shoes1",
+      "name": "black footbal shoes high quality",
       "price": "950",
       "img": "img/img-6.webp",
       "color":"black"
     },{
       "id": 7,
       "cat":"ball",
-      "name": "shoes1",
+      "name": "blue (crazy footbal shoes)",
       "price": "920",
       "img": "img/img-7.webp",
       "color":"blue"
     },{
       "id": 15,
       "cat":"sneakers",
-      "name": "shoes1",
+      "name": "black sneakers casual shoes",
       "price": "500",
       "img": "img/img-1.webp",
       "color":"black"
     },{
       "id": 8,
       "cat":"sneakers",
-      "name": "shoes1",
+      "name": "black sneakers casual shoes",
       "price": "500",
       "img": "img/img-2.webp",
       "color":"black"
@@ -78,7 +78,7 @@
     {
       "id": 9,
       "cat":"ball",
-      "name": "shoes1",
+      "name": "red sport shoes",
       "price": "700",
       "img": "/img/img-10.webp",
       "color":"orange"
@@ -102,7 +102,7 @@
     {
       "id": 12,
       "cat":"ball",
-      "name": "shoes1",
+      "name": "orange (football + sport both uses) ",
       "price": "550",
       "img": "img/img-13.jpg",
       "color":"orange"
@@ -111,7 +111,7 @@
     {
       "id": 14,
       "cat":"sneakers",
-      "name": "shoes1",
+      "name": "white cloth shoes",
       "price": "600",
       "img": "img/img-15.webp",
       "color":"white"
