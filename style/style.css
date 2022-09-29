@@ -44,7 +44,7 @@ body {
 }
 
 .nav-link:hover {
-  color: var(--orange-fade2) !important;
+  color: var(--white) !important;
 }
 
 .nav-active {

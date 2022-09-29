@@ -8,9 +8,14 @@ let bucketcount = document.getElementById("cart-item");
 let bucket = JSON.parse(localStorage.getItem('data')) || [];
 let checkout = document.getElementById('checkout');
 let show = document.getElementById('showdata');
+let totalprice = document.getElementsByClassName('total-price')[0];
+console.log(totalprice);
 const calculationcart = () => {
+
     let count = bucket.map((x) => x.itmecount).reduce((x, y) => x + y, 0)
-    bucketcount.innerText = count
+  bucketcount.innerText = count;
+
+ 
 }
 calculationcart();
 
@@ -59,7 +64,7 @@ function update(id) {
     // console.log(item);
     document.getElementById(id).innerText = search.itmecount;
     calculationcart();
-    
+  // totamamount();
 }
 function remove(id) {
   bucket = bucket.filter((x) => x.itemid != id);
@@ -69,19 +74,37 @@ function remove(id) {
   localStorage.setItem('data', JSON.stringify(bucket));
   console.log('remove');
 }
+
+let totamamount = (data) => {
+  if (bucket.length !== 0) {
+    console.log(data);
+    let amount = bucket.map((x) => {
+      let { itmecount, itemid } = x;
+      let search = data.find((y) => y.id === itemid) || [];
+      return itmecount * search.price;
+    }).reduce((x, y) => x + y, 0);
+
+    totalprice.innerText = amount;
+
+  } else {
+    totalprice.innerText = 0;
+
+  };
+}
+
+
 async function api() {
-  
   try {
-    
     let raw =await fetch('js/data.json');
     let actdata = await raw.json();
-    
     const genratedata = () => {
-      
+      totamamount(actdata);
       if (bucket.length != 0) {
           return (show.innerHTML = bucket.map((x) => {
               let search = actdata.find((item) => item.id == x.itemid) || [];
               let { id, name, price, img } = search;
+            // console.log(amt += Number(price * x.itmecount));
+            
             
           return `
           <div class="row my-3 align-items-center">
@@ -119,15 +142,13 @@ async function api() {
             <p>${price*x.itmecount}</p>
           </div>
         </div>
-  
           `
-          
   }).join(""))
       } else {
               
         show.innerHTML = `<h1>CART IS EMPTY NOW</h1>`;
         checkout.style.display = "none";
-          
+        // totalprice.style.display = "none";
   }
   
   }
