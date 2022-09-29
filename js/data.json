@@ -2,18 +2,18 @@
     {
       "id": 1,
       "cat":"sneakers",
-      "name": "white",
+      "name": "white sneakers premium",
       "price": "1000",
       "img": "/img/img-8.webp",
-      "color":"white sneakers premium"
+      "color":"white"
     },
     {
       "id": 2,
       "cat":"ball",
-      "name": "green",
+      "name": "green footbal shoes",
       "price": "800",
       "img": "/img/img-9.jpg",
-      "color":"green footbal shoes"
+      "color":"green "
     },{
       "id": 13,
       "cat":"sneakers",
@@ -86,23 +86,23 @@
     {
       "id": 10,
       "cat":"ball",
-      "name": "shoes1",
+      "name": "orange great sporty sohes",
       "price": "1000",
       "img": "/img/img-11.webp",
       "color":"orange"
     },
     {
       "id": 11,
-      "cat":"ball",
-      "name": "shoes1",
+      "cat":"sneakers",
+      "name": "normal sneakesr shoes ",
       "price": "500",
       "img": "img/img-12.webp",
       "color":"orange"
     },
     {
       "id": 12,
-      "cat":"ball",
-      "name": "orange (football + sport both uses) ",
+      "cat":"spo",
+      "name": "orange baisc sport shoes",
       "price": "550",
       "img": "img/img-13.jpg",
       "color":"orange"

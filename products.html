@@ -20,10 +20,16 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
     <title>our E-commerce</title>
   </head>
-  <body>
-    <!-- header start  -->
+  <body onload="preloader()">
+    
+    <div id="loading"></div>
+<!-- header start  -->
     <header>
       <!-- nav start  -->
       <nva class="navbar fixed-top navbar-expand-lg navbar-bg">
@@ -54,10 +60,10 @@
           </ul>
         </div>
         <div class="navbar-icons d-none d-lg-flex">
-          <div class="navbar-icon mx-2">
-            <i class="fas fa-search"></i>
-          </div>
-          <a +href="/store.html" class="navbar-icon mx-3 navbar-cart-icon">
+          <a class="navbar-icon mx-2 user-login">
+            <i class="fas fa-user"></i>
+          </a>
+          <a href="/store.html" class="navbar-icon mx-3 navbar-cart-icon">
             <i class="fas fa-shopping-cart"></i>
             <div class="cart-items" id="cart-item">0</div>
           </a>
@@ -65,7 +71,9 @@
       </nva>
       <!-- nav end  -->
     </header>
+<!-- header end  -->
 
+<!-- product start  -->
     <div class="product">
       <div class="container-fluid">
         <div class="row">
@@ -74,25 +82,25 @@
           >
             <!-- catrgories  -->
             <div class="product-categories-title my-4">
-              <h6 class="text-uppercase">shope by categories</h6>
+              <h6 class="text-uppercase">  categories filter</h6>
               <div class="product-categories-underline"></div>
             </div>
-            <a href="#" class="d-block products-categories-link">
+            <div  class="d-block products-categories-link ">
               <p class="mb-0" id="all" >All</p>
-            </a>
-            <a href="#" class="d-block products-categories-link">
+            </div>
+            <div  class="d-block products-categories-link">
               <p class="mb-0" id="all">Sneaker</p>
-            </a>
-            <a href="#" class="d-block products-categories-link">
+            </div>
+            <div  class="d-block products-categories-link">
               <p class="mb-0">Sport</p>
-            </a>
-            <a href="#" class="d-block products-categories-link">
+            </div>
+            <div  class="d-block products-categories-link">
               <p class="mb-0">Football</p>
-            </a>
+            </div>
 
             <!-- categories end  -->
             <div class="product-categories-title my-4">
-              <h6 class="text-uppercase">shope by price</h6>
+              <h6 class="text-uppercase"> price range</h6>
               <div class="product-categories-underlink"></div>
             </div>
             <form>
@@ -129,7 +137,7 @@
             <!-- categories end  -->
 
             <div class="product-categories-title my-4">
-              <h6 class="text-uppercase">shope by color</h6>
+              <h6 class="text-uppercase"> color filter</h6>
               <div class="product-categories-underline"></div>
             </div>
 
@@ -185,8 +193,8 @@
         </div>
       </div>
     </div>
-
-    <!-- header end  -->
+<!-- product end  -->
+    
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"

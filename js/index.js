@@ -1,3 +1,8 @@
+const preloader = () => {
+  const loding = document.getElementById('loading');
+      loding.style.display = 'none';
+  }
+  
 
 let shop = document.getElementById('showdata');
 let bucketcount = document.getElementById("cart-item");
@@ -49,7 +54,6 @@ localStorage.setItem('data', JSON.stringify(bucket));
 }
 
 
-
 async function mydata() {
   try {
     let data = await fetch('js/data.json');
@@ -64,15 +68,27 @@ mydata();
 
 // filter by categories
 let filtercat = (apidata) => {
+
   let showoutput = document.getElementsByClassName('products-categories-link');
+
+
+
+
   for (let i = 0; i < showoutput.length; i++){
     showoutput[i].addEventListener('click', () => {
-      let val = showoutput[i].innerText;
-      
 
+      // add active class and remove------------
+      for (let i = 0; i < showoutput.length; i++) {
+        showoutput[i].classList.remove('active');
+       }
+       showoutput[i].classList.add('active')
+//  --------------------------
+      
+      
+      let val = showoutput[i].innerText;
       if (val == "Football") {
         let mydata = apidata.filter((ele) => ele.cat == 'ball');
-        // console.log(mydata);
+        
         showwindowdata(mydata);
         filterbycolor(mydata);
         filterbyprice(mydata);
@@ -101,8 +117,16 @@ let filtercat = (apidata) => {
    
 
       }
+
+      
+   
+     
+
     })
   }
+
+  
+
   showwindowdata(apidata);
   filterbycolor(apidata);
   filterbyprice(apidata);
@@ -113,9 +137,17 @@ searchfilter(apidata);
 const filterbycolor = (mydata) => {
   
   
-    let color = document.getElementsByClassName('colors-cat');
+  let color = document.getElementsByClassName('colors-cat');
+  
+
+
     for (let i = 0; i < color.length; i++){
       color[i].addEventListener('click', () => {
+
+for (let i = 0; i < color.length; i++) {
+  color[i].classList.remove('active');
+}
+color[i].classList.add('active')
         let val = color[i].innerText.trim();
         if (val == 'White') {
           let newmydata = mydata.filter((ele) => ele.color == 'white');
@@ -214,7 +246,7 @@ showwindowdata(newdata)
   })
 
 }
-
+// show dynamic data 
 const showwindowdata = (mydata) => {
   
   return (shop.innerHTML = mydata.map((x) => {
@@ -248,7 +280,7 @@ const showwindowdata = (mydata) => {
    </div>
    <h6 class="text-capitalize text-center my-2">name : ${name}</h6>
    <h6 class="text-center">
-     <span class="">price: ${price}</span>
+     <span class="">price: ${price} &#8377; </span>
    </h6>
 
    

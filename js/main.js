@@ -1,3 +1,11 @@
+
+const preloader = () => {
+const loding = document.getElementById('loading');
+    loding.style.display = 'none';
+}
+
+
+
 let bucket = JSON.parse(localStorage.getItem('data')) || [];
 let bucketcount = document.getElementById("cart-item");
 let show = document.getElementById('showdata');
@@ -6,6 +14,8 @@ const calculationcart = () => {
     bucketcount.innerText = count
 }
 calculationcart();
+
+
 function increment(id) {
     let item = id;
    
@@ -28,7 +38,7 @@ calculationcart();
    
     getdata();
 }
-getdata();
+
 async function getdata() {
     
 try {
@@ -47,10 +57,9 @@ try {
               <img src="${img}" class="img-fluid" alt="" />
               <div class="featured-store-link my-5" onclick="increment(${id})" >add to cart</div>
             </div>
-            <h6 class="text-capitalize text-center my-2">${name}</h6>
+            <h6 class="text-capitalize text-center my-2">name : ${name}</h6>
             <h6 class="text-center">
-              <span class="old-price">$200</span>
-              <span class="">${price}</span>
+              <span class="">price : ${price} &#8377;</span>
             </h6>
           </div>`
     
@@ -70,3 +79,6 @@ try {
   
 
 }
+getdata();
+
+
