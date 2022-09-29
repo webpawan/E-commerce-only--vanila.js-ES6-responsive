@@ -254,7 +254,7 @@ const showwindowdata = (mydata) => {
     let search = bucket.find((x) => x.itemid == id);
     return `
   <div class="mx-auto col-md-6 mb-4 col-lg-4 ">
-  <div class="featured-container p-5">
+  <div class="featured-container p-3 p-lg-4">
     <img
       src="${img}"
     class="img-fluid"
@@ -295,3 +295,17 @@ const showwindowdata = (mydata) => {
 calculationcart();
 
 
+
+// ----------------
+let openform = document.getElementsByClassName('user-login')[0];
+openform.addEventListener('click', () => {
+    let formdata = document.getElementById('form-data');
+    formdata.classList.remove('d-none');
+})
+
+let cross = document.getElementById('cross');
+
+cross.addEventListener('click', () => {
+    let containerform = document.getElementById('form-data');
+   containerform.classList.add('d-none')
+})

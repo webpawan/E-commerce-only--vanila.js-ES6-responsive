@@ -28,11 +28,13 @@ body {
 }
 
 /* navbar------------------ */
+
 .navbar-toggler {
   outline: none !important;
   border: none;
   font-size: 2.2rem;
   color: var(--white) !important;
+  /* background-color: white !important; */
 }
 
 .nav-link {
@@ -81,6 +83,41 @@ body {
 }
 .user-login:hover {
   color: var(--white);
+}
+
+.myform {
+  height: 100vh;
+  width: 100%;
+  /* background-color: #071013; */
+  z-index: 10000;
+  top: 10rem;
+}
+
+#form-data {
+  height: 100vh;
+  width: 100%;
+  z-index: 10000;
+  background-color: #05040498;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#form {
+  background: linear-gradient(#fc4f4fd5, #ffbb807e), url(/img/bg-3.jpg);
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.562);
+}
+.cross-container {
+  display: flex;
+  justify-content: right;
+}
+#cross {
+  border: none;
+  margin-right: 1rem;
+  font-size: 1.5rem;
 }
 
 /* banner --------------------------- */
@@ -258,7 +295,8 @@ footer {
 /* store --------------- */
 
 .totals {
-  margin-top: 5%;
+  margin-top: 4rem;
+  /* background-color: red; */
 }
 
 .cart-img {
@@ -284,4 +322,8 @@ footer {
 
 .colors-cat:hover {
   color: var(--orange-dark);
+}
+
+/* Media Query  */
+@media only screen and (max-width: 400px) {
 }

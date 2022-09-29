@@ -23,6 +23,8 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
+  <link rel="icon" type="image/x-icon" href="/img/logo.jpg">
+
     <title>our E-commerce</title>
   </head>
   <body onload="preloader()">
@@ -59,28 +61,56 @@
 
             
           </ul>
+          <div class="navbar-icons  d-flex">
+            <a class="navbar-icon mx-2 user-login">
+              <i class="fas fa-user"></i>
+            </a>
+            <a href="/store.html" class="navbar-icon mx-3 navbar-cart-icon">
+              <i class="fas fa-shopping-cart"></i>
+              <div class="cart-items" id="cart-item">0</div>
+            </a>
+          </div>
         </div>
-        <div class="navbar-icons d-none d-lg-flex">
-          <a class="navbar-icon mx-2 user-login">
-            <i class="fas fa-user"></i>
-          </a>
-          <a href="/store.html" class="navbar-icon mx-3 navbar-cart-icon">
-            <i class="fas fa-shopping-cart"></i>
-            <div class="cart-items" id="cart-item">0</div>
-          </a>
-        </div>
+       
       </nva>
       <!-- nav end   -->
+      
+      <!-- user form start -->
+
+      <form id="form-data" class="d-none">
+        <div id="form" false class=" rounded-1 p-4  col-lg-6 ">
+         <div class="cross-container">
+          <span class=" my-2 btn btn-outline-dark" id="cross"><i class="fa-regular fa-circle-xmark"></i></span>
+         </div>
+          <h1 class="text-center text-capitalize p-2 bg-dark text-white">Sign in form</h1>
+             <div class="mb-3">
+               <label for="Email1" class="form-label "  style="font-weight: bold;">Email address</label>
+               <input type="email" class="form-control" required id="Email1" >
+             </div>
+             <div class="mb-3">
+               <label for="InputPassword1" class="form-label" style="font-weight: bold;">Password</label>
+               <input type="password" class="form-control" required id="InputPassword1">
+             </div>
+             
+           <div class="text-center">
+            <button type="submit" class="btn border-2 btn-outline-dark text-center mx-auto">Submit</button>
+           </div>
+           
+         </div>
+      
+      
+            </form>
+      <!-- user form end  -->
     </header>
     <!-- header end  -->
 
 
     <!-- main ccontainer start-------- -->
-    <div class="totals py-5">
+    <div class="totals py-5 ">
       <div class="container-fluid">
         <div class="row">
           <div class="col text-center text-uppercase">
-            <div class="row">
+            <div class="row ">
               <div class="col-10 mx-auto col-md-2">
                 <p class="text-uppercase">product</p>
               </div>

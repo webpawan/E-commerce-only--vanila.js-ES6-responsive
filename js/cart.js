@@ -140,3 +140,19 @@ async function api() {
   
   }
 api();
+
+
+
+// ----------------
+let openform = document.getElementsByClassName('user-login')[0];
+openform.addEventListener('click', () => {
+    let formdata = document.getElementById('form-data');
+    formdata.classList.remove('d-none');
+})
+
+let cross = document.getElementById('cross');
+
+cross.addEventListener('click', () => {
+    let containerform = document.getElementById('form-data');
+   containerform.classList.add('d-none')
+})

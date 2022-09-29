@@ -53,7 +53,7 @@ try {
         return (show.innerHTML = showapidata.map((x) => {
             let { id, name, price, img } = x;
             return ` <div class="col-10 mx-auto col-md-6 mb-4 col-lg-4" >
-            <div class="featured-container p-5" id="product-id-${id}">
+            <div class="featured-container p-3 p-lg-4" id="product-id-${id}">
               <img src="${img}" class="img-fluid" alt="" />
               <div class="featured-store-link my-5" onclick="increment(${id})" >add to cart</div>
             </div>
@@ -80,5 +80,21 @@ try {
 
 }
 getdata();
+
+
+
+// ----------------
+let openform = document.getElementsByClassName('user-login')[0];
+openform.addEventListener('click', () => {
+    let formdata = document.getElementById('form-data');
+    formdata.classList.remove('d-none');
+})
+
+let cross = document.getElementById('cross');
+
+cross.addEventListener('click', () => {
+    let containerform = document.getElementById('form-data');
+   containerform.classList.add('d-none')
+})
 
 
